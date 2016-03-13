@@ -8,14 +8,10 @@
 </h:head>
 <h:body>
     <h1>Hello World</h1>
-    <h:inputText binding="#{input1}" />
-    <h:button onclick="#{newsBoundary.createDummyArticle(input1.value)}" value="Click to insert article"/>
-    <ul>
-        <ui:repeat value="#{newsBoundary.allNews}" var="n">
-            <li>
-                <p>#{n.title}</p>
-            </li>
-        </ui:repeat>
-    </ul>
+    <p>Press the button below to create a user Ajaco, a post 'Ajacos first post' with a comment 'Ajacos first comment' attached to it.</p>
+    <h:form id="form">
+        <h:commandButton id="button" value="Magic!" action="#{postBoundary.createDummyArticle}" />
+    </h:form>
+    <p>#{postBoundary.printContent()}</p>
 </h:body>
 </html>
